@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kian</title>
+    <meta name="theme-color" content="#0a0a0a">
+    <meta property="og:title" content="Kian Kalantari">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="https://i.pinimg.com/1200x/84/52/c8/8452c84330a1bf421aa8e8a8a32ae2aa.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+
+    <header class="titlebar">
+        <div class="traffic-lights">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <div class="prompt">Fm@site:~$</div>
+        <nav class="tabs">
+            <a href="#Who" class="tab active">about.md</a>
+            <a href="#Now" class="tab">Now.mp4</a>
+            <a href="#contact" class="tab">contact.sh</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 class="name-header">Kian</h1>
+            <p class="intro">Also known as <b>FmAce</b>, Novice dev</p>
+            <p class="intro">I am driven by a refusal to settle for the average</p>
+        </section>
+
+        <section id="Who" class="section">
+            <span class="line-label">// 01 Who</span>
+            <div class="content-block">
+              <p>I mostly play <i><b>story games</b></i>, notable ones are Ghost of tsushima and Cyberpunk.
+                 Also really into Anime, ones i could speak of are Chainsaw Man and Attack on Titan, alongside cyberpunk, again.</p>
+                 <p>English isn't my native language and i've spent more than a decade working on it.</p>
+              <p>Something worth remembering, <i><b>"The map is not the territory"</b></i> by Alfred Korzybski.</p>
+              <p>it simply means that Your understanding of reality is never reality itself, it's a simplified stand-in built for convenience, not truth.</p>
+            </div>
+        </section>
+
+        <section id="Now" class="section">
+            <span class="line-label">// 02 Now</span>
+            <div class="content-block">
+              <p>Learning Machine learning, Getting better at web development and polishing python.</p>
+              <p>I waste my time tweaking anything, then  revert it all back over again.</p>
+              <p>I mostly play a wide variety of music while I code or work. <a href="https://open.spotify.com/user/31jgl2wgcazjr663xv3vh6tvolte?si=a795341de67a429a"
+                 class="inline-link">Check it out</a></p>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <span class="line-label">// 03 contact</span>
+            <div class="contact-links">
+              <a href="#" class="contact-link" target="_blank" rel="noopener"><span>GitHub</span><span class="arrow">↗</span></a>
+              <p class="text-mid">Email<span class="arrow"> ↘</span></p>
+                <button class="copy-btn" id="copy-email-btn" data-copy="kiankal@proton.me">
+                    <span>kiankal@proton.me</span>
+                    <span class="copy-badge">Copy</span>
+                </button>
+                <p class="text-mid">Discord<span class="arrow"> ↘</span></p>
+                <button class="copy-btn" id="copy-discord-btn" data-copy="fm.tz">
+                    <span>fm.tz</span>
+                    <span class="copy-badge">Copy</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <span>Kian Kalantari &copy; <span id="current-year"></span></span>
+            <span id="local-clock">My time — 00:00</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
