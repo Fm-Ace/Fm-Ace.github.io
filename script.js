@@ -14,26 +14,56 @@ const timeFormatter = new Intl.DateTimeFormat('en-US', {
 });
 
 const updateClock = () => {
+    if (!dom.clock) return;
     dom.clock.textContent = `My time — ${timeFormatter.format(new Date())}`;
 };
 
-dom.year.textContent = new Date().getFullYear();
+if (dom.year) {
+    dom.year.textContent = new Date().getFullYear();
+}
+
 updateClock();
 setInterval(updateClock, 30000);
 
+const copyText = async (value) => {
+    if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(value);
+        return;
+    }
+
+    const field = document.createElement('textarea');
+    field.value = value;
+    field.setAttribute('readonly', '');
+    field.style.position = 'fixed';
+    field.style.left = '-9999px';
+    document.body.appendChild(field);
+    field.select();
+    const copied = document.execCommand('copy');
+    field.remove();
+    if (!copied) throw new Error('copy failed');
+};
+
 dom.copyButtons.forEach((btn) => {
+    let resetTimer;
+
     btn.addEventListener('click', async () => {
         const badge = btn.querySelector('.copy-badge');
+        if (!badge) return;
+
+        clearTimeout(resetTimer);
+
+        const reset = (label, copied) => {
+            badge.textContent = label;
+            badge.classList.toggle('copied', copied);
+        };
+
         try {
-            await navigator.clipboard.writeText(btn.dataset.copy);
-            badge.textContent = 'Copied!';
-            badge.classList.add('copied');
-            setTimeout(() => {
-                badge.textContent = 'Copy';
-                badge.classList.remove('copied');
-            }, 2000);
+            await copyText(btn.dataset.copy);
+            reset('Copied!', true);
+            resetTimer = setTimeout(() => reset('Copy', false), 2000);
         } catch {
-            badge.textContent = 'Failed';
+            reset('Failed', false);
+            resetTimer = setTimeout(() => reset('Copy', false), 2000);
         }
     });
 });
