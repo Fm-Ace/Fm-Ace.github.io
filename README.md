@@ -2,7 +2,7 @@
 
 > Personal website.
 
-**Live:** [FmAcey.github.io](https://FmAcey.github.io)
+**Live:** [kian.is-a.dev](https://kian.is-a.dev)
 
 ## About
 
