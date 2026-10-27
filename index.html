@@ -1,108 +1,287 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kian</title>
-    <meta name="description" content="Personal site of Kian Kalantari — also known as FmAce.">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta property="og:title" content="Kian Kalantari">
-    <meta property="og:type" content="website">
-    <link rel="icon" href="https://i.pinimg.com/1200x/84/52/c8/8452c84330a1bf421aa8e8a8a32ae2aa.jpg">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070707">
+  <meta name="description" content="A personal corner of the internet for useful tools, curious experiments, and things worth building.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kian — Small ideas. Useful things.">
+  <meta property="og:description" content="A personal corner of the internet for things I’m learning, making, and interested in.">
+  <meta name="twitter:card" content="summary">
+  <title>Kian</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <svg class="svg-defs" aria-hidden="true">
-        <defs>
-            <linearGradient id="icon-grad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"></stop>
-                <stop offset="48%" stop-color="#b8b8c0"></stop>
-                <stop offset="100%" stop-color="#6a6a72"></stop>
-            </linearGradient>
-        </defs>
-    </svg>
-    <div class="bg-grid"></div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <header class="titlebar">
-        <div class="traffic-lights" aria-hidden="true">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-        </div>
-        <div class="prompt">Fm@site:~$</div>
-        <nav class="tabs">
-            <a href="#Who" class="tab active">about.md</a>
-            <a href="#Now" class="tab">now.mp4</a>
-            <a href="#contact" class="tab">contact.sh</a>
-        </nav>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="icon-github" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.73.39-1.23.71-1.51-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.1-1.45 3.04-1.15 3.04-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3.01 0 4.27-2.6 5.21-5.09 5.49.4.35.75 1.02.75 2.06v3.09c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
+    </symbol>
+    <symbol id="icon-discord" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M19.73 5.14a18.2 18.2 0 0 0-4.5-1.4l-.57 1.16a16.8 16.8 0 0 0-5.3 0L8.8 3.74a18.1 18.1 0 0 0-4.5 1.4C1.46 9.4.69 13.43 1.07 17.4a18.3 18.3 0 0 0 5.53 2.8l1.19-1.92a11.8 11.8 0 0 1-1.87-.91l.46-.36a13 13 0 0 0 11.24 0l.46.36c-.6.36-1.23.67-1.88.91l1.2 1.92a18.3 18.3 0 0 0 5.52-2.8c.45-4.6-.77-8.6-3.19-12.26ZM8.8 14.82c-1.08 0-1.96-.99-1.96-2.2 0-1.22.86-2.21 1.96-2.21s1.98.99 1.96 2.2c0 1.22-.86 2.21-1.96 2.21Zm6.4 0c-1.08 0-1.96-.99-1.96-2.2 0-1.22.86-2.21 1.96-2.21s1.98.99 1.96 2.2c0 1.22-.86 2.21-1.96 2.21Z"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="m4 7 8 6 8-6"/>
+    </symbol>
+    <symbol id="icon-arrow-up-right" viewBox="0 0 16 16">
+      <path d="M4 12 12 4M5 4h7v7"/>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 20 20">
+      <path d="M4 10h11m-4-4 4 4-4 4"/>
+    </symbol>
+    <symbol id="icon-code" viewBox="0 0 32 32">
+      <path d="m11 8-8 8 8 8M21 8l8 8-8 8M18 4l-4 24"/>
+    </symbol>
+    <symbol id="icon-nodes" viewBox="0 0 32 32">
+      <circle cx="16" cy="6" r="3"/>
+      <circle cx="7" cy="24" r="3"/>
+      <circle cx="25" cy="24" r="3"/>
+      <circle cx="16" cy="17" r="3"/>
+      <path d="m14.6 8.7-5.9 12.6m8.7-12.6 5.9 12.6M10 24h12"/>
+    </symbol>
+    <symbol id="icon-spark" viewBox="0 0 32 32">
+      <path d="M16 3.5 18.9 13l9.6 3-9.6 2.9-2.9 9.6-3-9.6-9.5-2.9 9.5-3L16 3.5Z"/>
+      <path d="m25 3 .9 3.1L29 7l-3.1.9L25 11l-.9-3.1L21 7l3.1-.9L25 3Z"/>
+    </symbol>
+    <symbol id="icon-python" viewBox="0 0 32 32">
+      <path fill="currentColor" d="M15.8 3C9.3 3 9.7 5.8 9.7 5.8v4h6.2v1.2H7.3S3 10.5 3 16.3s3.8 5.6 3.8 5.6h2.3v-3.3s-.1-3.9 3.8-3.9h6.5s3.6.1 3.6-3.5V7.4S23.5 3 15.8 3Zm-3.4 2.2a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6Z"/>
+      <path fill="currentColor" d="M16.2 29c6.5 0 6.1-2.8 6.1-2.8v-4h-6.2V21h8.6s4.3.5 4.3-5.3-3.8-5.6-3.8-5.6h-2.3v3.3s.1 3.9-3.8 3.9h-6.5s-3.6-.1-3.6 3.5v3.8S8.5 29 16.2 29Zm3.4-2.2a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6Z"/>
+    </symbol>
+    <symbol id="icon-javascript" viewBox="0 0 32 32">
+      <rect x="2" y="2" width="28" height="28" rx="2" fill="currentColor"/>
+      <path fill="var(--icon-cutout)" d="M17.4 23.1c.6 1 1.3 1.7 2.7 1.7 1.1 0 1.8-.5 1.8-1.3 0-.9-.7-1.2-2-1.8l-.7-.3c-2-.9-3.3-2-3.3-4.3 0-2.1 1.6-3.7 4.1-3.7 1.8 0 3.1.6 4 2.3l-2.2 1.4c-.5-.9-1-1.3-1.8-1.3s-1.3.5-1.3 1.2c0 .8.5 1.2 1.7 1.7l.7.3c2.4 1 3.7 2.1 3.7 4.4 0 2.5-2 3.9-4.7 3.9-2.6 0-4.3-1.2-5.1-2.9ZM6.8 23.3c.5.8.9 1.5 1.9 1.5.9 0 1.4-.4 1.4-1.8v-9.5H13v9.6c0 2.8-1.6 4.1-4 4.1-2.2 0-3.5-1.1-4.2-2.5Z"/>
+    </symbol>
+    <symbol id="icon-html" viewBox="0 0 32 32">
+      <path fill="currentColor" d="M5 2.5h22l-2 24L16 29.5 7 26.5l-2-24Z"/>
+      <path fill="var(--icon-cutout)" d="M10 8h12l-.3 3H13.4l.2 2.4h7.8l-.8 8.4-4.6 1.5-4.6-1.5-.3-3.8h3l.2 1.7 1.7.5 1.7-.5.3-3.4h-7L10 8Z"/>
+    </symbol>
+    <symbol id="icon-css" viewBox="0 0 32 32">
+      <path fill="currentColor" d="M5 2.5h22l-2 24L16 29.5 7 26.5l-2-24Z"/>
+      <text x="16" y="23" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="var(--icon-cutout)">3</text>
+    </symbol>
+  </svg>
+
+  <div class="site-shell" id="top">
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Kian, back to top">Kian Kalantari</a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#focus">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+
+        <details class="contact-menu">
+          <summary class="contact-trigger">
+            <span>Get in touch</span>
+            <span class="header-contact-icons" aria-hidden="true">
+              <svg class="header-icon"><use href="#icon-github"/></svg>
+              <svg class="header-icon"><use href="#icon-discord"/></svg>
+              <svg class="header-icon email-icon"><use href="#icon-mail"/></svg>
+            </span>
+            <svg class="trigger-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+          </summary>
+
+          <div class="contact-popover" role="group" aria-label="Contact options">
+            <a class="contact-option" href="https://github.com/Fm-Ace" target="_blank" rel="noopener noreferrer">
+              <span class="option-mark github-mark" aria-hidden="true"><svg><use href="#icon-github"/></svg></span>
+              <span class="option-copy">
+                <span class="option-title">GitHub</span>
+                <span class="option-detail">Explore my code</span>
+              </span>
+              <svg class="option-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+            </a>
+            <button class="contact-option copy-option" type="button" data-copy="fm.tz" data-copy-label="Discord username">
+              <span class="option-mark discord-mark" aria-hidden="true"><svg><use href="#icon-discord"/></svg></span>
+              <span class="option-copy">
+                <span class="option-title">Discord</span>
+                <span class="option-detail">Copy username</span>
+              </span>
+              <span class="option-status" aria-hidden="true">Copy</span>
+            </button>
+            <button class="contact-option copy-option" type="button" data-copy="kiankal@proton.me" data-copy-label="email address">
+              <span class="option-mark email-mark" aria-hidden="true"><svg><use href="#icon-mail"/></svg></span>
+              <span class="option-copy">
+                <span class="option-title">Email</span>
+                <span class="option-detail">Copy email address</span>
+              </span>
+              <span class="option-status" aria-hidden="true">Copy</span>
+            </button>
+          </div>
+        </details>
+      </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1 class="name-header text-gradient">Kian</h1>
-            <p class="intro">Also known as <strong>FmAce</strong>, novice dev</p>
-            <p class="intro">I am driven by a refusal to settle for the average</p>
-        </section>
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>THINGS CONSIDERED, TRIED AND MADE.</p>
+          <h1 id="hero-title">Small ideas.<br><span>Useful things.</span></h1>
+          <p class="hero-description">A record of sorts.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#focus">
+              Explore the site
+              <svg class="button-icon" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+            </a>
+            <a class="button button-secondary" href="#about">A little about me</a>
+          </div>
+        </div>
+      </section>
 
-        <section id="Who" class="section">
-            <span class="line-label">// 01 Who</span>
-            <div class="content-block">
-                <p>I mostly play <i><strong>story games</strong></i>, notable ones are Ghost of Tsushima and Cyberpunk. Also really into anime, ones I could speak of are Chainsaw Man and Attack on Titan, alongside Cyberpunk, again.</p>
-                <p>English isn't my native language and I've spent more than a decade working on it.</p>
-                <p>Something worth remembering, <i><strong>"The map is not the territory"</strong></i> by Alfred Korzybski.</p>
-                <p>It simply means that your understanding of reality is never reality itself, it's a simplified stand-in built for convenience, not truth.</p>
-            </div>
-        </section>
+      <section class="section focus-section" id="focus" aria-labelledby="focus-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A FEW OPEN TABS</p>
+            <h2 id="focus-title">Things I’m <em>working on</em></h2>
+          </div>
+          <span class="section-index">A starting point, never a finished list.</span>
+        </div>
 
-        <section id="Now" class="section">
-            <span class="line-label">// 02 Now</span>
-            <div class="content-block">
-                <p>Learning machine learning, getting better at web development and polishing Python.</p>
-                <p>I waste my time tweaking anything, then revert it all back over again.</p>
-                <p>I mostly play a wide variety of music while I code or work. <a href="https://open.spotify.com/user/31jgl2wgcazjr663xv3vh6tvolte?si=a795341de67a429a" class="inline-link">Check it out</a></p>
+        <div class="focus-grid">
+          <article class="focus-card">
+            <div class="focus-card-top">
+              <span class="focus-number">01 / WEB</span>
+              <svg class="focus-icon icon-code" aria-hidden="true"><use href="#icon-code"/></svg>
             </div>
-        </section>
+            <h3>Personal website</h3>
+            <p>A quiet place for things I’m learning, making, and interested in.</p>
+            <span class="focus-card-footer">HTML / CSS / JAVASCRIPT</span>
+          </article>
 
-        <section id="contact" class="section">
-            <span class="line-label">// 03 Contact</span>
-            <div class="contact-links">
-                <a href="https://github.com/Fm-Ace" class="contact-link" target="_blank" rel="noopener noreferrer">
-                    <span>GitHub</span>
-                    <svg class="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                        <path d="M3.5 10.5L10.5 3.5M10.5 3.5H5M10.5 3.5V9" stroke="url(#icon-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                </a>
-                <p class="text-mid">
-                    Email
-                    <svg class="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                        <path d="M3.5 3.5L10.5 10.5M10.5 10.5V5M10.5 10.5H5" stroke="url(#icon-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                </p>
-                <button type="button" class="copy-btn" data-copy="kiankal@proton.me" aria-label="Copy email address">
-                    <span>kiankal@proton.me</span>
-                    <span class="copy-badge">Copy</span>
-                </button>
-                <p class="text-mid">
-                    Discord
-                    <svg class="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                        <path d="M3.5 3.5L10.5 10.5M10.5 10.5V5M10.5 10.5H5" stroke="url(#icon-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                </p>
-                <button type="button" class="copy-btn" data-copy="fm.tz" aria-label="Copy Discord username">
-                    <span>fm.tz</span>
-                    <span class="copy-badge">Copy</span>
-                </button>
+          <article class="focus-card">
+            <div class="focus-card-top">
+              <span class="focus-number">02 / PYTHON</span>
+              <svg class="focus-icon icon-nodes" aria-hidden="true"><use href="#icon-nodes"/></svg>
             </div>
-        </section>
+            <h3>Focus Coach</h3>
+            <p>A personal project exploring a lightweight way to understand focus and context, still in the making.</p>
+            <span class="focus-card-footer">PYTHON / MACHINE LEARNING</span>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-card-top">
+              <span class="focus-number">03 / LEARNING</span>
+              <svg class="focus-icon icon-spark" aria-hidden="true"><use href="#icon-spark"/></svg>
+            </div>
+            <h3>ML experiments</h3>
+            <p>Small models and evaluation metrics, while I learn more about machine learning and data science.</p>
+            <span class="focus-card-footer">PYTHON / SCIKIT-LEARN</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section skills-section" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TOOLS I’M LEARNING</p>
+            <h2 id="skills-title">The current <em>toolkit</em></h2>
+          </div>
+          <p class="section-note">Always a work in progress.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill">
+            <svg class="skill-icon python-icon" aria-hidden="true"><use href="#icon-python"/></svg>
+            <span>Python</span>
+          </div>
+          <div class="skill">
+            <svg class="skill-icon ml-icon" aria-hidden="true"><use href="#icon-nodes"/></svg>
+            <span>Machine learning</span>
+          </div>
+          <div class="skill">
+            <svg class="skill-icon javascript-icon" aria-hidden="true"><use href="#icon-javascript"/></svg>
+            <span>JavaScript</span>
+          </div>
+          <div class="skill">
+            <svg class="skill-icon html-icon" aria-hidden="true"><use href="#icon-html"/></svg>
+            <span>HTML</span>
+          </div>
+          <div class="skill">
+            <svg class="skill-icon css-icon" aria-hidden="true"><use href="#icon-css"/></svg>
+            <span>CSS</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="about-top">
+          <p class="eyebrow">A LITTLE CONTEXT</p>
+          <span class="section-index">WHAT I BELIEVE</span>
+        </div>
+        <div class="about-layout">
+          <h2 id="about-title">Still learning.<br><span>Already building.</span></h2>
+          <div class="about-copy">
+            <p>I like learning while building because I believe making projects is a big part of the process.</p>
+            <a class="about-link" href="https://github.com/Fm-Ace" target="_blank" rel="noopener noreferrer">
+              Find me on GitHub
+              <svg aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-band" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">SOMEWHERE, AS ALWAYS</p>
+          <h2 id="contact-title">Have something <em>interesting?</em></h2>
+          <p>I'm always here.</p>
+        </div>
+
+        <details class="contact-menu contact-menu-bottom">
+          <summary class="button button-primary contact-band-button">
+            Get in touch
+            <svg class="trigger-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+          </summary>
+          <div class="contact-popover" role="group" aria-label="Contact options">
+            <a class="contact-option" href="https://github.com/Fm-Ace" target="_blank" rel="noopener noreferrer">
+              <span class="option-mark github-mark" aria-hidden="true"><svg><use href="#icon-github"/></svg></span>
+              <span class="option-copy">
+                <span class="option-title">GitHub</span>
+                <span class="option-detail">Explore my code</span>
+              </span>
+              <svg class="option-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+            </a>
+            <button class="contact-option copy-option" type="button" data-copy="fm.tz" data-copy-label="Discord username">
+              <span class="option-mark discord-mark" aria-hidden="true"><svg><use href="#icon-discord"/></svg></span>
+              <span class="option-copy">
+                <span class="option-title">Discord</span>
+                <span class="option-detail">Copy username</span>
+              </span>
+              <span class="option-status" aria-hidden="true">Copy</span>
+            </button>
+            <button class="contact-option copy-option" type="button" data-copy="kiankal@proton.me" data-copy-label="email address">
+              <span class="option-mark email-mark" aria-hidden="true"><svg><use href="#icon-mail"/></svg></span>
+              <span class="option-copy">
+                <span class="option-title">Email</span>
+                <span class="option-detail">Copy email address</span>
+              </span>
+              <span class="option-status" aria-hidden="true">Copy</span>
+            </button>
+          </div>
+        </details>
+      </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <span>Kian Kalantari &copy; <span id="current-year"></span></span>
-            <span id="local-clock">My time — 00:00</span>
-        </div>
+    <footer class="site-footer">
+      <a class="footer-signoff" href="#top">Made with curiosity <span aria-hidden="true">↗</span></a>
+      <div class="footer-links">
+        <a class="footer-social-link" href="https://github.com/Fm-Ace" target="_blank" rel="noopener noreferrer">
+          GitHub
+          <svg aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+        </a>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+        <span class="footer-copyright">© <span id="year">2026</span> Kian</span>
+      </div>
     </footer>
 
-    <script src="script.js"></script>
+    <p class="sr-only" id="copy-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+  </div>
 </body>
 </html>
